@@ -1,0 +1,914 @@
+[
+  {
+    "number": 1,
+    "name_ar": "الفَاتِحة",
+    "name_en": "Al-Fātiḥah",
+    "revelation": "makki",
+    "ayah_count": 7,
+    "has_basmalah": true
+  },
+  {
+    "number": 2,
+    "name_ar": "البَقَرَة",
+    "name_en": "Al-Baqarah",
+    "revelation": "madani",
+    "ayah_count": 286,
+    "has_basmalah": true
+  },
+  {
+    "number": 3,
+    "name_ar": "آل عِمران",
+    "name_en": "Āl-‘Imrān",
+    "revelation": "madani",
+    "ayah_count": 200,
+    "has_basmalah": true
+  },
+  {
+    "number": 4,
+    "name_ar": "النِّسَاء",
+    "name_en": "An-Nisā’",
+    "revelation": "madani",
+    "ayah_count": 176,
+    "has_basmalah": true
+  },
+  {
+    "number": 5,
+    "name_ar": "المَائدة",
+    "name_en": "Al-Mā’idah",
+    "revelation": "madani",
+    "ayah_count": 120,
+    "has_basmalah": true
+  },
+  {
+    "number": 6,
+    "name_ar": "الأنعَام",
+    "name_en": "Al-An‘ām",
+    "revelation": "makki",
+    "ayah_count": 165,
+    "has_basmalah": true
+  },
+  {
+    "number": 7,
+    "name_ar": "الأعرَاف",
+    "name_en": "Al-A‘rāf",
+    "revelation": "makki",
+    "ayah_count": 206,
+    "has_basmalah": true
+  },
+  {
+    "number": 8,
+    "name_ar": "الأنفَال",
+    "name_en": "Al-Anfāl",
+    "revelation": "madani",
+    "ayah_count": 75,
+    "has_basmalah": true
+  },
+  {
+    "number": 9,
+    "name_ar": "التوبَة",
+    "name_en": "At-Taubah",
+    "revelation": "madani",
+    "ayah_count": 129,
+    "has_basmalah": false
+  },
+  {
+    "number": 10,
+    "name_ar": "يُونس",
+    "name_en": "Yūnus",
+    "revelation": "makki",
+    "ayah_count": 109,
+    "has_basmalah": true
+  },
+  {
+    "number": 11,
+    "name_ar": "هُود",
+    "name_en": "Hūd",
+    "revelation": "makki",
+    "ayah_count": 123,
+    "has_basmalah": true
+  },
+  {
+    "number": 12,
+    "name_ar": "يُوسُف",
+    "name_en": "Yūsuf",
+    "revelation": "makki",
+    "ayah_count": 111,
+    "has_basmalah": true
+  },
+  {
+    "number": 13,
+    "name_ar": "الرَّعد",
+    "name_en": "Ar-Ra‘d",
+    "revelation": "madani",
+    "ayah_count": 43,
+    "has_basmalah": true
+  },
+  {
+    "number": 14,
+    "name_ar": "إبراهِيم",
+    "name_en": "Ibrāhīm",
+    "revelation": "makki",
+    "ayah_count": 52,
+    "has_basmalah": true
+  },
+  {
+    "number": 15,
+    "name_ar": "الحِجر",
+    "name_en": "Al-Ḥijr",
+    "revelation": "makki",
+    "ayah_count": 99,
+    "has_basmalah": true
+  },
+  {
+    "number": 16,
+    "name_ar": "النَّحل",
+    "name_en": "An-Naḥl",
+    "revelation": "makki",
+    "ayah_count": 128,
+    "has_basmalah": true
+  },
+  {
+    "number": 17,
+    "name_ar": "الإسرَاء",
+    "name_en": "Al-Isrā’",
+    "revelation": "makki",
+    "ayah_count": 111,
+    "has_basmalah": true
+  },
+  {
+    "number": 18,
+    "name_ar": "الكَهف",
+    "name_en": "Al-Kahf",
+    "revelation": "makki",
+    "ayah_count": 110,
+    "has_basmalah": true
+  },
+  {
+    "number": 19,
+    "name_ar": "مَريَم",
+    "name_en": "Maryam",
+    "revelation": "makki",
+    "ayah_count": 98,
+    "has_basmalah": true
+  },
+  {
+    "number": 20,
+    "name_ar": "طه",
+    "name_en": "Ṭā-Hā",
+    "revelation": "makki",
+    "ayah_count": 135,
+    "has_basmalah": true
+  },
+  {
+    "number": 21,
+    "name_ar": "الأنبيَاء",
+    "name_en": "Al-Anbiyā’",
+    "revelation": "makki",
+    "ayah_count": 112,
+    "has_basmalah": true
+  },
+  {
+    "number": 22,
+    "name_ar": "الحج",
+    "name_en": "Al-Ḥajj",
+    "revelation": "makki",
+    "ayah_count": 78,
+    "has_basmalah": true
+  },
+  {
+    "number": 23,
+    "name_ar": "المؤمنُون",
+    "name_en": "Al-Mu’minūn",
+    "revelation": "makki",
+    "ayah_count": 118,
+    "has_basmalah": true
+  },
+  {
+    "number": 24,
+    "name_ar": "النور",
+    "name_en": "An-Nūr",
+    "revelation": "madani",
+    "ayah_count": 64,
+    "has_basmalah": true
+  },
+  {
+    "number": 25,
+    "name_ar": "الفُرقَان",
+    "name_en": "Al-Furqān",
+    "revelation": "makki",
+    "ayah_count": 77,
+    "has_basmalah": true
+  },
+  {
+    "number": 26,
+    "name_ar": "الشعراء",
+    "name_en": "Ash-Shu‘arā’",
+    "revelation": "makki",
+    "ayah_count": 227,
+    "has_basmalah": true
+  },
+  {
+    "number": 27,
+    "name_ar": "النَّمل",
+    "name_en": "An-Naml",
+    "revelation": "makki",
+    "ayah_count": 93,
+    "has_basmalah": true
+  },
+  {
+    "number": 28,
+    "name_ar": "القَصَص",
+    "name_en": "Al-Qaṣaṣ",
+    "revelation": "makki",
+    "ayah_count": 88,
+    "has_basmalah": true
+  },
+  {
+    "number": 29,
+    "name_ar": "العَنكبُوت",
+    "name_en": "Al-‘Ankabūt",
+    "revelation": "makki",
+    "ayah_count": 69,
+    "has_basmalah": true
+  },
+  {
+    "number": 30,
+    "name_ar": "الرُّوم",
+    "name_en": "Ar-Rūm",
+    "revelation": "makki",
+    "ayah_count": 60,
+    "has_basmalah": true
+  },
+  {
+    "number": 31,
+    "name_ar": "لُقمَان",
+    "name_en": "Luqmān",
+    "revelation": "makki",
+    "ayah_count": 34,
+    "has_basmalah": true
+  },
+  {
+    "number": 32,
+    "name_ar": "السَّجدة",
+    "name_en": "As-Sajdah",
+    "revelation": "makki",
+    "ayah_count": 30,
+    "has_basmalah": true
+  },
+  {
+    "number": 33,
+    "name_ar": "الأحزَاب",
+    "name_en": "Al-Aḥzāb",
+    "revelation": "madani",
+    "ayah_count": 73,
+    "has_basmalah": true
+  },
+  {
+    "number": 34,
+    "name_ar": "سَبإ",
+    "name_en": "Saba’",
+    "revelation": "makki",
+    "ayah_count": 54,
+    "has_basmalah": true
+  },
+  {
+    "number": 35,
+    "name_ar": "فَاطِر",
+    "name_en": "Fāṭir",
+    "revelation": "makki",
+    "ayah_count": 45,
+    "has_basmalah": true
+  },
+  {
+    "number": 36,
+    "name_ar": "يسٓ",
+    "name_en": "Yā-Sīn",
+    "revelation": "makki",
+    "ayah_count": 83,
+    "has_basmalah": true
+  },
+  {
+    "number": 37,
+    "name_ar": "الصَّافَات",
+    "name_en": "Aṣ-Ṣāffāt",
+    "revelation": "makki",
+    "ayah_count": 182,
+    "has_basmalah": true
+  },
+  {
+    "number": 38,
+    "name_ar": "صٓ",
+    "name_en": "Ṣād",
+    "revelation": "makki",
+    "ayah_count": 88,
+    "has_basmalah": true
+  },
+  {
+    "number": 39,
+    "name_ar": "الزُّمَر",
+    "name_en": "Az-Zumar",
+    "revelation": "makki",
+    "ayah_count": 75,
+    "has_basmalah": true
+  },
+  {
+    "number": 40,
+    "name_ar": "غَافِر",
+    "name_en": "Ghāfir",
+    "revelation": "makki",
+    "ayah_count": 85,
+    "has_basmalah": true
+  },
+  {
+    "number": 41,
+    "name_ar": "فُصِّلَت",
+    "name_en": "Fuṣṣilat",
+    "revelation": "makki",
+    "ayah_count": 54,
+    "has_basmalah": true
+  },
+  {
+    "number": 42,
+    "name_ar": "الشُّوري",
+    "name_en": "Ash-Shūra",
+    "revelation": "makki",
+    "ayah_count": 53,
+    "has_basmalah": true
+  },
+  {
+    "number": 43,
+    "name_ar": "الزُّخرُف",
+    "name_en": "Az-Zukhruf",
+    "revelation": "makki",
+    "ayah_count": 89,
+    "has_basmalah": true
+  },
+  {
+    "number": 44,
+    "name_ar": "الدُّخان",
+    "name_en": "Ad-Dukhān",
+    "revelation": "makki",
+    "ayah_count": 59,
+    "has_basmalah": true
+  },
+  {
+    "number": 45,
+    "name_ar": "الجاثِية",
+    "name_en": "Al-Jāthiyah",
+    "revelation": "makki",
+    "ayah_count": 37,
+    "has_basmalah": true
+  },
+  {
+    "number": 46,
+    "name_ar": "الأحقَاف",
+    "name_en": "Al-Aḥqāf",
+    "revelation": "makki",
+    "ayah_count": 35,
+    "has_basmalah": true
+  },
+  {
+    "number": 47,
+    "name_ar": "مُحمد",
+    "name_en": "Muḥammad",
+    "revelation": "madani",
+    "ayah_count": 38,
+    "has_basmalah": true
+  },
+  {
+    "number": 48,
+    "name_ar": "الفَتح",
+    "name_en": "Al-Fatḥ",
+    "revelation": "madani",
+    "ayah_count": 29,
+    "has_basmalah": true
+  },
+  {
+    "number": 49,
+    "name_ar": "الحُجُرَات",
+    "name_en": "Al-Ḥujurāt",
+    "revelation": "madani",
+    "ayah_count": 18,
+    "has_basmalah": true
+  },
+  {
+    "number": 50,
+    "name_ar": "قٓ",
+    "name_en": "Qāf",
+    "revelation": "makki",
+    "ayah_count": 45,
+    "has_basmalah": true
+  },
+  {
+    "number": 51,
+    "name_ar": "الذَّاريَات",
+    "name_en": "Adh-Dhāriyāt",
+    "revelation": "makki",
+    "ayah_count": 60,
+    "has_basmalah": true
+  },
+  {
+    "number": 52,
+    "name_ar": "الطُّور",
+    "name_en": "Aṭ-Ṭūr",
+    "revelation": "makki",
+    "ayah_count": 49,
+    "has_basmalah": true
+  },
+  {
+    "number": 53,
+    "name_ar": "النَّجم",
+    "name_en": "An-Najm",
+    "revelation": "makki",
+    "ayah_count": 62,
+    "has_basmalah": true
+  },
+  {
+    "number": 54,
+    "name_ar": "القَمَر",
+    "name_en": "Al-Qamar",
+    "revelation": "makki",
+    "ayah_count": 55,
+    "has_basmalah": true
+  },
+  {
+    "number": 55,
+    "name_ar": "الرَّحمٰن",
+    "name_en": "Ar-Raḥmān",
+    "revelation": "makki",
+    "ayah_count": 78,
+    "has_basmalah": true
+  },
+  {
+    "number": 56,
+    "name_ar": "الوَاقِعة",
+    "name_en": "Al-Wāqi‘ah",
+    "revelation": "makki",
+    "ayah_count": 96,
+    "has_basmalah": true
+  },
+  {
+    "number": 57,
+    "name_ar": "الحدِيد",
+    "name_en": "Al-Ḥadīd",
+    "revelation": "madani",
+    "ayah_count": 29,
+    "has_basmalah": true
+  },
+  {
+    "number": 58,
+    "name_ar": "المُجَادلة",
+    "name_en": "Al-Mujādilah",
+    "revelation": "madani",
+    "ayah_count": 22,
+    "has_basmalah": true
+  },
+  {
+    "number": 59,
+    "name_ar": "الحَشر",
+    "name_en": "Al-Ḥashr",
+    "revelation": "madani",
+    "ayah_count": 24,
+    "has_basmalah": true
+  },
+  {
+    "number": 60,
+    "name_ar": "المُمتَحنَة",
+    "name_en": "Al-Mumtaḥanah",
+    "revelation": "madani",
+    "ayah_count": 13,
+    "has_basmalah": true
+  },
+  {
+    "number": 61,
+    "name_ar": "الصَّف",
+    "name_en": "Aṣ-Ṣaff",
+    "revelation": "madani",
+    "ayah_count": 14,
+    "has_basmalah": true
+  },
+  {
+    "number": 62,
+    "name_ar": "الجُمعَة",
+    "name_en": "Al-Jumu‘ah",
+    "revelation": "madani",
+    "ayah_count": 11,
+    "has_basmalah": true
+  },
+  {
+    "number": 63,
+    "name_ar": "المُنَافِقُونَ",
+    "name_en": "Al-Munāfiqūn",
+    "revelation": "madani",
+    "ayah_count": 11,
+    "has_basmalah": true
+  },
+  {
+    "number": 64,
+    "name_ar": "التغَابُن",
+    "name_en": "At-Taghābun",
+    "revelation": "madani",
+    "ayah_count": 18,
+    "has_basmalah": true
+  },
+  {
+    "number": 65,
+    "name_ar": "الطَّلَاق",
+    "name_en": "Aṭ-Ṭalāq",
+    "revelation": "madani",
+    "ayah_count": 12,
+    "has_basmalah": true
+  },
+  {
+    "number": 66,
+    "name_ar": "التَّحرِيم",
+    "name_en": "At-Taḥrīm",
+    "revelation": "madani",
+    "ayah_count": 12,
+    "has_basmalah": true
+  },
+  {
+    "number": 67,
+    "name_ar": "المُلك",
+    "name_en": "Al-Mulk",
+    "revelation": "makki",
+    "ayah_count": 30,
+    "has_basmalah": true
+  },
+  {
+    "number": 68,
+    "name_ar": "القَلَم",
+    "name_en": "Al-Qalam",
+    "revelation": "makki",
+    "ayah_count": 52,
+    "has_basmalah": true
+  },
+  {
+    "number": 69,
+    "name_ar": "الحَاقة",
+    "name_en": "Al-Ḥāqqah",
+    "revelation": "makki",
+    "ayah_count": 52,
+    "has_basmalah": true
+  },
+  {
+    "number": 70,
+    "name_ar": "المَعَارج",
+    "name_en": "Al-Ma‘ārij",
+    "revelation": "makki",
+    "ayah_count": 44,
+    "has_basmalah": true
+  },
+  {
+    "number": 71,
+    "name_ar": "نُوح",
+    "name_en": "Nūḥ",
+    "revelation": "makki",
+    "ayah_count": 28,
+    "has_basmalah": true
+  },
+  {
+    "number": 72,
+    "name_ar": "الجِن",
+    "name_en": "Al-Jinn",
+    "revelation": "makki",
+    "ayah_count": 28,
+    "has_basmalah": true
+  },
+  {
+    "number": 73,
+    "name_ar": "المُزمل",
+    "name_en": "Al-Muzzammil",
+    "revelation": "makki",
+    "ayah_count": 20,
+    "has_basmalah": true
+  },
+  {
+    "number": 74,
+    "name_ar": "المُدثر",
+    "name_en": "Al-Muddaththir",
+    "revelation": "makki",
+    "ayah_count": 56,
+    "has_basmalah": true
+  },
+  {
+    "number": 75,
+    "name_ar": "القِيَامة",
+    "name_en": "Al-Qiyāmah",
+    "revelation": "makki",
+    "ayah_count": 40,
+    "has_basmalah": true
+  },
+  {
+    "number": 76,
+    "name_ar": "الإنسَان",
+    "name_en": "Al-Insān",
+    "revelation": "makki",
+    "ayah_count": 31,
+    "has_basmalah": true
+  },
+  {
+    "number": 77,
+    "name_ar": "المُرسَلات",
+    "name_en": "Al-Mursalāt",
+    "revelation": "makki",
+    "ayah_count": 50,
+    "has_basmalah": true
+  },
+  {
+    "number": 78,
+    "name_ar": "النَّبَإ",
+    "name_en": "An-Naba’",
+    "revelation": "makki",
+    "ayah_count": 40,
+    "has_basmalah": true
+  },
+  {
+    "number": 79,
+    "name_ar": "النَّازعَات",
+    "name_en": "An-Nāzi‘āt",
+    "revelation": "makki",
+    "ayah_count": 46,
+    "has_basmalah": true
+  },
+  {
+    "number": 80,
+    "name_ar": "عَبَسَ",
+    "name_en": "‘Abasa",
+    "revelation": "makki",
+    "ayah_count": 42,
+    "has_basmalah": true
+  },
+  {
+    "number": 81,
+    "name_ar": "التَّكوير",
+    "name_en": "At-Takwīr",
+    "revelation": "makki",
+    "ayah_count": 29,
+    "has_basmalah": true
+  },
+  {
+    "number": 82,
+    "name_ar": "الانفِطَار",
+    "name_en": "Al-Infiṭār",
+    "revelation": "makki",
+    "ayah_count": 19,
+    "has_basmalah": true
+  },
+  {
+    "number": 83,
+    "name_ar": "المُطَففين",
+    "name_en": "Al-Muṭaffifīn",
+    "revelation": "makki",
+    "ayah_count": 36,
+    "has_basmalah": true
+  },
+  {
+    "number": 84,
+    "name_ar": "الانشِقَاق",
+    "name_en": "Al-Inshiqāq",
+    "revelation": "makki",
+    "ayah_count": 25,
+    "has_basmalah": true
+  },
+  {
+    "number": 85,
+    "name_ar": "البُرُوج",
+    "name_en": "Al-Burūj",
+    "revelation": "makki",
+    "ayah_count": 22,
+    "has_basmalah": true
+  },
+  {
+    "number": 86,
+    "name_ar": "الطَّارق",
+    "name_en": "Aṭ-Ṭāriq",
+    "revelation": "makki",
+    "ayah_count": 17,
+    "has_basmalah": true
+  },
+  {
+    "number": 87,
+    "name_ar": "الأعلى",
+    "name_en": "Al-A‘lā",
+    "revelation": "makki",
+    "ayah_count": 19,
+    "has_basmalah": true
+  },
+  {
+    "number": 88,
+    "name_ar": "الغَاشِية",
+    "name_en": "Al-Ghāshiyah",
+    "revelation": "makki",
+    "ayah_count": 26,
+    "has_basmalah": true
+  },
+  {
+    "number": 89,
+    "name_ar": "الفَجر",
+    "name_en": "Al-Fajr",
+    "revelation": "makki",
+    "ayah_count": 30,
+    "has_basmalah": true
+  },
+  {
+    "number": 90,
+    "name_ar": "البَلَد",
+    "name_en": "Al-Balad",
+    "revelation": "makki",
+    "ayah_count": 20,
+    "has_basmalah": true
+  },
+  {
+    "number": 91,
+    "name_ar": "الشَّمس",
+    "name_en": "Ash-Shams",
+    "revelation": "makki",
+    "ayah_count": 15,
+    "has_basmalah": true
+  },
+  {
+    "number": 92,
+    "name_ar": "اللَّيل",
+    "name_en": "Al-Lail",
+    "revelation": "makki",
+    "ayah_count": 21,
+    "has_basmalah": true
+  },
+  {
+    "number": 93,
+    "name_ar": "الضُّحى",
+    "name_en": "Aḍ-Ḍuḥā",
+    "revelation": "makki",
+    "ayah_count": 11,
+    "has_basmalah": true
+  },
+  {
+    "number": 94,
+    "name_ar": "الشَّرح",
+    "name_en": "Ash-Sharḥ",
+    "revelation": "makki",
+    "ayah_count": 8,
+    "has_basmalah": true
+  },
+  {
+    "number": 95,
+    "name_ar": "التِّين",
+    "name_en": "At-Tīn",
+    "revelation": "makki",
+    "ayah_count": 8,
+    "has_basmalah": true
+  },
+  {
+    "number": 96,
+    "name_ar": "العَلَق",
+    "name_en": "Al-‘Alaq",
+    "revelation": "makki",
+    "ayah_count": 19,
+    "has_basmalah": true
+  },
+  {
+    "number": 97,
+    "name_ar": "القَدر",
+    "name_en": "Al-Qadr",
+    "revelation": "makki",
+    "ayah_count": 5,
+    "has_basmalah": true
+  },
+  {
+    "number": 98,
+    "name_ar": "البَينَة",
+    "name_en": "Al-Bayyinah",
+    "revelation": "madani",
+    "ayah_count": 8,
+    "has_basmalah": true
+  },
+  {
+    "number": 99,
+    "name_ar": "الزَّلزَلة",
+    "name_en": "Az-Zalzalah",
+    "revelation": "madani",
+    "ayah_count": 8,
+    "has_basmalah": true
+  },
+  {
+    "number": 100,
+    "name_ar": "العَاديَات",
+    "name_en": "Al-‘Ādiyāt",
+    "revelation": "makki",
+    "ayah_count": 11,
+    "has_basmalah": true
+  },
+  {
+    "number": 101,
+    "name_ar": "القَارعَة",
+    "name_en": "Al-Qāri‘ah",
+    "revelation": "makki",
+    "ayah_count": 11,
+    "has_basmalah": true
+  },
+  {
+    "number": 102,
+    "name_ar": "التَّكاثُر",
+    "name_en": "At-Takāthur",
+    "revelation": "makki",
+    "ayah_count": 8,
+    "has_basmalah": true
+  },
+  {
+    "number": 103,
+    "name_ar": "العَصر",
+    "name_en": "Al-‘Aṣr",
+    "revelation": "makki",
+    "ayah_count": 3,
+    "has_basmalah": true
+  },
+  {
+    "number": 104,
+    "name_ar": "الهُمَزة",
+    "name_en": "Al-Humazah",
+    "revelation": "makki",
+    "ayah_count": 9,
+    "has_basmalah": true
+  },
+  {
+    "number": 105,
+    "name_ar": "الفِيل",
+    "name_en": "Al-Fīl",
+    "revelation": "makki",
+    "ayah_count": 5,
+    "has_basmalah": true
+  },
+  {
+    "number": 106,
+    "name_ar": "قُرَيش",
+    "name_en": "Quraish",
+    "revelation": "makki",
+    "ayah_count": 4,
+    "has_basmalah": true
+  },
+  {
+    "number": 107,
+    "name_ar": "المَاعُون",
+    "name_en": "Al-Mā‘ūn",
+    "revelation": "makki",
+    "ayah_count": 7,
+    "has_basmalah": true
+  },
+  {
+    "number": 108,
+    "name_ar": "الكَوثر",
+    "name_en": "Al-Kauthar",
+    "revelation": "makki",
+    "ayah_count": 3,
+    "has_basmalah": true
+  },
+  {
+    "number": 109,
+    "name_ar": "الكافِرون",
+    "name_en": "Al-Kāfirūn",
+    "revelation": "makki",
+    "ayah_count": 6,
+    "has_basmalah": true
+  },
+  {
+    "number": 110,
+    "name_ar": "النَّصر",
+    "name_en": "An-Naṣr",
+    "revelation": "madani",
+    "ayah_count": 3,
+    "has_basmalah": true
+  },
+  {
+    "number": 111,
+    "name_ar": "المَسَد",
+    "name_en": "Al-Masad",
+    "revelation": "makki",
+    "ayah_count": 5,
+    "has_basmalah": true
+  },
+  {
+    "number": 112,
+    "name_ar": "الإخلَاص",
+    "name_en": "Al-Ikhlāṣ",
+    "revelation": "makki",
+    "ayah_count": 4,
+    "has_basmalah": true
+  },
+  {
+    "number": 113,
+    "name_ar": "الفَلَق",
+    "name_en": "Al-Falaq",
+    "revelation": "makki",
+    "ayah_count": 5,
+    "has_basmalah": true
+  },
+  {
+    "number": 114,
+    "name_ar": "النَّاس",
+    "name_en": "An-Nās",
+    "revelation": "makki",
+    "ayah_count": 6,
+    "has_basmalah": true
+  }
+]

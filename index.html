@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>المصحف المرتل المتزامن · Tarteel Sync (mp3quran v4)</title>
+  <meta name="description" content="تطبيق المصحف المرتل التفاعلي المتزامن بالكلمات لحظة بلحظة مع الصوتيات، مبني بالكامل على mp3quran API v4 التجريبي الجديد.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Top Navigation Header -->
+    <header class="top-header">
+      <div class="brand-section">
+        <button id="btnToggleSidebar" class="header-btn icon-btn" aria-label="فتح قائمة القراء والسور">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+
+        <div class="brand-title">
+          <h1>
+            <span>المصحف المتزامن</span>
+            <span class="api-badge">API v4 Preview</span>
+          </h1>
+          <span class="brand-sub">تظليل الكلمات لحظيًا بدقة Zipformer QuranLab</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- AutoScroll Toggle -->
+        <button id="btnAutoScroll" class="header-btn active" title="التمرير التلقائي لمتابعة الكلمة المقروءة">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
+          <span>التمرير التلقائي</span>
+        </button>
+
+        <!-- Highlight Scope Toggle (Ayah vs Breath Segment) -->
+        <button id="btnHighlightScope" class="header-btn" title="تبديل نطاق التظليل الخلفي: الآية كاملة أو مقطع النَّفَس الواحد">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+            <path d="M12 12v9"></path>
+            <path d="m8 17 4 4 4-4"></path>
+          </svg>
+          <span id="highlightScopeLabel">التظليل: الآية كاملة</span>
+        </button>
+
+        <!-- Live Breath Indicator Badge -->
+        <div id="breathIndicator" class="breath-indicator" style="display: none;">
+          <span class="breath-pulse"></span>
+          <span>سكت / أخذ نَفَس</span>
+        </div>
+
+        <!-- Timing Tools & Calibration Button -->
+        <button id="btnTimingTools" class="header-btn" title="أدوات فحص ومعايرة التوقيت">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span id="timingStatusBadge">تزامن الكلمات (v4)</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="btnThemeToggle" class="header-btn icon-btn" title="تبديل النمط (داكن / ورقي)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace (Sidebar + Reader Area) -->
+    <main class="main-layout">
+      
+      <!-- Backdrop for mobile sidebar -->
+      <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+      <!-- App Sidebar (Reciters & Surahs) -->
+      <aside id="appSidebar" class="app-sidebar">
+        <!-- Tabs -->
+        <div class="sidebar-tabs">
+          <button id="tabReciters" class="sidebar-tab active">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>القراء</span>
+          </button>
+          <button id="tabSurahs" class="sidebar-tab">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <span>السور (114)</span>
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="sidebar-search">
+          <div class="search-input-wrapper">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن اسم القارئ..." autocomplete="off">
+            <button id="searchClear" class="search-clear" title="مسح البحث">✕</button>
+          </div>
+        </div>
+
+        <!-- Filter Chips (Reciters Tab) -->
+        <div class="filter-chips">
+          <button class="filter-chip active" data-filter="all">الكل</button>
+          <button class="filter-chip" data-filter="timings">يدعم التزامن اللحظي</button>
+          <button class="filter-chip" data-filter="hafs">حفص عن عاصم</button>
+          <button class="filter-chip" data-filter="warsh">ورش عن نافع</button>
+        </div>
+
+        <!-- Reciters List -->
+        <div id="recitersList" class="sidebar-list">
+          <div class="state-container">
+            <div class="spinner"></div>
+            <p>جاري تحميل قائمة القراء...</p>
+          </div>
+        </div>
+
+        <!-- Surahs List (Initially Hidden) -->
+        <div id="surahsList" class="sidebar-list" style="display: none;"></div>
+      </aside>
+
+      <!-- Mushaf Viewport & Reader Area -->
+      <section class="reader-container">
+        
+        <div id="mushafViewport" class="mushaf-viewport">
+          
+          <!-- Surah Frame Header -->
+          <div class="surah-frame">
+            <div class="surah-banner">
+              <div class="surah-banner-pattern"></div>
+              <h2 id="surahBannerTitle" class="surah-banner-title">سُورَةُ الفَاتِحَةِ</h2>
+              <div id="surahBannerInfo" class="surah-banner-info">
+                <span>مَكِّيَّة</span>
+                <span class="banner-dot"></span>
+                <span>٧ آيَات</span>
+                <span class="banner-dot"></span>
+                <span>رقم السورة: ١</span>
+              </div>
+            </div>
+
+            <!-- Basmalah Frame -->
+            <div id="basmalahFrame" class="basmalah-frame">
+              بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ
+            </div>
+          </div>
+
+          <!-- Flowing Ayahs Container -->
+          <div id="ayahsContainer" class="ayahs-container">
+            <div class="state-container">
+              <div class="spinner"></div>
+              <p>جاري تحميل النص القرآني...</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Floating Bottom Audio Player Dock -->
+    <footer class="bottom-player-dock">
+      
+      <!-- Player Left: Track Details -->
+      <div class="player-info-section">
+        <div class="player-avatar">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </div>
+        <div class="player-track-details">
+          <span id="playerSurahName" class="player-surah-name">سورة الفاتحة</span>
+          <div class="player-reciter-name">
+            <span id="playerReciterName">مشاري العفاسي</span>
+            <span id="playerRiwayahTag" class="player-riwayah-tag">حفص عن عاصم</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player Center: Controls & Timeline -->
+      <div class="player-controls-section">
+        
+        <div class="player-buttons-row">
+          <!-- Previous Ayah -->
+          <button id="btnPrevAyah" class="btn-ctrl" title="الآية السابقة">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 4 15 12 5 20 5 4"></polygon>
+              <line x1="19" y1="5" x2="19" y2="19"></line>
+            </svg>
+          </button>
+
+          <!-- Play / Pause -->
+          <button id="btnPlayPause" class="btn-ctrl btn-play-pause" title="تشغيل / إيقاف (مسافة)">
+            <svg id="playIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <svg id="pauseIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+
+          <!-- Next Ayah -->
+          <button id="btnNextAyah" class="btn-ctrl" title="الآية التالية">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="19 20 9 12 19 4 19 20"></polygon>
+              <line x1="5" y1="19" x2="5" y2="5"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Scrubber Timeline -->
+        <div class="timeline-row">
+          <span id="timeNow" class="time-label">0:00</span>
+          <div id="scrubberBar" class="scrubber-bar">
+            <div id="scrubberBuffered" class="scrubber-buffered"></div>
+            <div id="scrubberFill" class="scrubber-fill"></div>
+            <div id="scrubberKnob" class="scrubber-knob"></div>
+          </div>
+          <span id="timeTotal" class="time-label">0:00</span>
+        </div>
+
+      </div>
+
+      <!-- Player Right: Format, Speed, Volume -->
+      <div class="player-extra-section">
+        <!-- Quality / Format Switch -->
+        <button id="btnQuality" class="quality-badge" title="تبديل جودة وصيغة الصوت (Original / MP3 64k / Opus 48k)">
+          أصلية Original
+        </button>
+
+        <!-- Speed Switch -->
+        <button id="btnSpeed" class="speed-badge" title="تغيير سرعة التلاوة">
+          1.0x
+        </button>
+
+        <!-- Volume -->
+        <div class="volume-container">
+          <button id="btnMute" class="btn-ctrl" title="كتم الصوت (M)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+          <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.05" value="1">
+        </div>
+      </div>
+
+    </footer>
+
+    <!-- Timing Calibration & Feedback Drawer -->
+    <div id="timingDrawer" class="timing-drawer">
+      <div class="timing-drawer-header">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>معايرة التزامن والملاحظات (API v4)</span>
+        </h3>
+        <button id="btnCloseDrawer" class="btn-ctrl" title="إغلاق">✕</button>
+      </div>
+
+      <!-- Live Inspector Readouts -->
+      <div class="timing-inspector-data">
+        <div class="timing-stat-row">
+          <span>التوقيت اللحظي:</span>
+          <b id="statCurrentMs">0 ms</b>
+        </div>
+        <div class="timing-stat-row">
+          <span>الكلمة الحالية:</span>
+          <b id="statWordText">—</b>
+        </div>
+        <div class="timing-stat-row">
+          <span>الموقع القرآني:</span>
+          <b id="statAyahWord">—</b>
+        </div>
+        <div class="timing-stat-row">
+          <span>نطاق التوقيت المسجل:</span>
+          <b id="statTimingsRange">—</b>
+        </div>
+        <div class="timing-stat-row">
+          <span>إصدار المحاذاة (Release):</span>
+          <b id="statRelease">2026.09.3</b>
+        </div>
+      </div>
+
+      <!-- Fine-tune Offset Control -->
+      <div class="timing-offset-control">
+        <div class="offset-slider-row">
+          <span>إزاحة التزامن (Sync Offset):</span>
+          <b id="liveOffsetLabel">-25 ms</b>
+        </div>
+        <input type="range" id="timingOffsetSlider" class="offset-slider" min="-300" max="300" step="5" value="-25">
+        <div class="offset-presets">
+          <button class="btn-preset" data-val="-60">-60ms</button>
+          <button class="btn-preset" data-val="-30">-30ms</button>
+          <button class="btn-preset active" data-val="-25">-25ms</button>
+          <button class="btn-preset" data-val="0">0ms</button>
+          <button class="btn-preset" data-val="30">+30ms</button>
+          <button class="btn-preset" data-val="60">+60ms</button>
+        </div>
+      </div>
+
+      <!-- Copy Bug Report for Itqan / mp3quran Team -->
+      <button id="btnCopyFeedback" class="btn-feedback" title="نسخ تقرير التوقيت لتقديمه كملاحظة للمطورين">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <span>نسخ تقرير التوقيت للملاحظات</span>
+      </button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="toast"></div>
+
+    <!-- Hidden Native Audio Element -->
+    <audio id="mainAudio" preload="auto"></audio>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
